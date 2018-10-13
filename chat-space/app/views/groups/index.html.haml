@@ -34,14 +34,22 @@
           .edit__button
             Edit
       .chats
-        = render @messages
-
+        .chat
+          .chat__name
+            keita
+          .chat__message
+            お久しぶり
+        .chat
+          .chat__name
+            ryota
+          .chat__message
+            ヤッホー
       .form
-        = form_for [@group, @message] do |f|
-        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
-        .form__mask
-          = f.label :image, class: 'form__mask__image' do
-            = fa_icon 'picture-o', class: 'icon'
-            = f.file_field :image, class: 'hidden'
-        = f.submit 'Send', class: 'form__submit'
+        %form
+          %input.form__message{placeholder: "type a txet"}
+          %div.form__mask
+            %label.form__mask__image
+              = fa_icon 'picture-o', class: 'icon'
+              %input.hidden{type: 'file'}
+          %button.form__button SEND
 
