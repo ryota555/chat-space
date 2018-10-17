@@ -10,6 +10,9 @@ $(function() {
                 </div>`
     return html;
   }
+  function scroll(){
+    $('.chat').animate({scrollTop: $('.chat')[0].scrollHeight},'fast')
+  }
   $('.form').on("submit", function(e) {
     e.preventDefault();
     var formDate = new FormDate(this);
@@ -25,6 +28,9 @@ $(function() {
       var html = buildHTML(date);
       $('.chat__message').append(html)
       $('.form__mask').val()
+    })
+    .fail(function(){
+      alert('送信できませんでした')
     })
   });
 });
