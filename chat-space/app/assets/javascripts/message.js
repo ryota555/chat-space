@@ -1,8 +1,7 @@
 $(function() {
-  $('.form').on("click", function() {
-
+  $('.form').on("submit", function(e) {
+    e.preventDefault();
     var formDate = new FormDate(this);
-
     $.ajax({
       type: 'post',
       url: '/messages/create',
