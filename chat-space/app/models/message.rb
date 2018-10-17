@@ -4,5 +4,3 @@ class Message < ApplicationRecord
 
   validates :content, presence: true, unless: :image?
 end
-
-mount_uploader :image, ImageUploader
