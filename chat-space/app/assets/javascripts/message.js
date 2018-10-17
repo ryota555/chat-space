@@ -1,4 +1,15 @@
 $(function() {
+  function buildHTML(comment){
+    var html =  `<div class="chat">
+                  <div class="chat__name">
+                   ${messagese.user.name}
+                  </div>
+                  <div class="chat__message">
+                    ${message.content}
+                  </div>
+                </div>`
+    return html;
+  }
   $('.form').on("submit", function(e) {
     e.preventDefault();
     var formDate = new FormDate(this);
@@ -10,5 +21,10 @@ $(function() {
       processData: false,
       contentType: false
     });
+    .done(function(){
+      var html = buildHTML(date);
+      $('.chat__message').append(html)
+      $('.form__mask').val()
+    })
   });
 });
