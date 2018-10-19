@@ -4,9 +4,13 @@ $(function() {
 
     $.ajax({
       type: 'GET',
-      url: '/products/search'
+      url: '/users/index'
       date: { keyword: input },
       datetype: 'json'
     })
+
+    .done(function(products) {
+      $("")
+    }
   });
 });
