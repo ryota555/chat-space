@@ -34,5 +34,8 @@ $(function() {
         appendNoUser("一致するユーザーはいません");
       }
     })
+    .fail(function(user) {
+      alert('検索に失敗しました');
+    })
   });
 });
