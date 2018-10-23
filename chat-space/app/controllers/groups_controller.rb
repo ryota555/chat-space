@@ -4,7 +4,6 @@ class GroupsController < ApplicationController
 
   def index
     @group = Group.new
-    @group.users = Group.users.new
   end
 
   def new
