@@ -11,10 +11,11 @@
     .content
       .upper
         .team
-          .team__name
-            = @groups.name
-          .team__member
-            MEMBER: keita
+          - @group.users.each do |user|
+            .team__name
+              = @groups.name
+            .team__member
+              = user.name
         .edit
           .edit__button
             = link_to 'Edit', edit_group_path(current_user)
