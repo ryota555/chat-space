@@ -11,10 +11,10 @@
     .content
       .upper
         .team
-          - @group.users.each do |user|
-            .team__name
-              = @group.name
-            .team__member
+          .team__name
+            = @group.name
+          .team__member
+            - @group.users.each do |user|
               = user.name
         .edit
           .edit__button
