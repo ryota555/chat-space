@@ -1,24 +1,26 @@
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.11.0"
+# lock "~> 3.11.0"
 
 set :application, 'chat-space'
 set :repo_url,  'git@github.com:ryota555/chat-space.git'
 
-set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
+set :develop_to, "/var/www/chat-space/chat-space"
 
-set :rbenv_type, :user
-set :rbenv_ruby, '2.3.1'
+# set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
 
-set :ssh_options, auth_methods: ['publickey'],
-                  keys: ['/Users/jingyuanliaotai/.ssh/penkey.pem']
+# set :rbenv_type, :user
+# set :rbenv_ruby, '2.3.1'
 
-set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
-set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
-set :keep_releases, 5
+# set :ssh_options, auth_methods: ['publickey'],
+                  # keys: ['/Users/jingyuanliaotai/.ssh/penkey.pem']
 
-after 'deploy:publishing', 'deploy:restart'
-namespace :deploy do
-  task :restart do
-    invoke 'unicorn:restart'
-  end
-end
+# set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
+# set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
+# set :keep_releases, 5
+
+# after 'deploy:publishing', 'deploy:restart'
+# namespace :deploy do
+  # task :restart do
+    # invoke 'unicorn:restart'
+  # end
+# end
