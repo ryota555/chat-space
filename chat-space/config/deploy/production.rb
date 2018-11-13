@@ -2,12 +2,6 @@
 server '13.115.20.198',
 user: 'ec2-user',
 roles: %w{app db web},
-ssh_options: {
-  user: "ec2-user",
-  keys: %w(/home/jingyuanliaotai/.ssh/pega_key.pem)
-  forward_agent: false,
-  auth_methods: %w(publickey password)
-}
 
 # server-based syntax
 # ======================
